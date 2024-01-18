@@ -43,7 +43,14 @@ main {
     cursor: pointer;
 }
 .board {
-    width: 500px;
+    width: min(90%,500px);
     height: 500px;
+    margin-bottom: 20px;
     border: 1px solid var(--clr-dark);
+}
+@media only screen and (max-width: 600px) {
+    main{
+        display: flex;
+        flex-direction: column;
+    }
 }
