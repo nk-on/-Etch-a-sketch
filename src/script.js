@@ -14,7 +14,8 @@ gridRange.addEventListener("change",()=>{
     createGrid(gridRange.value**2);
 });
 function createGrid(gridNumber){
-    for(let i = 1; i <= gridNumber;i++){
+    console.log(gridNumber)
+    for(let i = 0; i < gridNumber;i++){
         const square = document.createElement("div");
         square.classList.add("square");
         drawingBoard.appendChild(square);
