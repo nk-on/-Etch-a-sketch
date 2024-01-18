@@ -1,8 +1,49 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-:root{
-    --bg-color:#ededed;
+
+:root {
+    --bg-color: #ededed;
+    --clr-dark: #000;
+    --clr-onclick:#333333;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--bg-color);
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.options-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.option {
+    border: 1px solid var(--clr-dark);
+    border-radius:5px;
+    padding: 10px 30px;
+    background-color: var(--bg-color);
+    cursor: pointer;
+}
+.board {
+    width: 500px;
+    height: 500px;
+    border: 1px solid var(--clr-dark);
 }
