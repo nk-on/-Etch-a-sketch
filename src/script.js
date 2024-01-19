@@ -1,5 +1,6 @@
 const gridRange = document.querySelector("#grid-range");
-const colorPicker = document.querySelector("#board");
+const gridlabel = document.querySelector("#grid-label")
+const colorPicker = document.querySelector("#color-picker");
 const colorModeButton = document.querySelector('.option.color-mode');
 const rainbowModeButton = document.querySelector('.option.rainbow-mode');
 const eraserButton = document.querySelector('.option.eraser');
@@ -14,13 +15,14 @@ gridRange.addEventListener("change",()=>{
     createGrid(gridRange.value**2);
 });
 function createGrid(gridNumber){
+    const gridRow = Math.sqrt(gridNumber);
     if(drawingBoard.innerHTML.length > 0){
         drawingBoard.innerHTML = "";
     };
     for(let i = 0; i < gridNumber;i++){
         const square = document.createElement("div");
         square.classList.add("square");
-        square.style.flex = `${100/Math.sqrt(gridNumber)}%`;
+        square.style.flex = `${100/gridRow}%`;
         drawingBoard.appendChild(square);
     };
 }
