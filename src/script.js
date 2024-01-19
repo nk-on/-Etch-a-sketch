@@ -25,4 +25,5 @@ function createGrid(gridNumber){
         square.style.flex = `${100/gridRow}%`;
         drawingBoard.appendChild(square);
     };
+    gridlabel.textContent = `${gridRow}X${gridRow}`
 }
