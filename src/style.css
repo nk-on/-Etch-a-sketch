@@ -7,7 +7,7 @@
 :root {
     --bg-color: #ededed;
     --clr-dark: #000;
-    --clr-onclick:#333333;
+    --clr-onclick: #333333;
 }
 
 body {
@@ -33,28 +33,38 @@ main {
     display: flex;
     flex-direction: column;
     gap: 30px;
+    margin-bottom: 20px;
 }
 
 .option {
     border: 1px solid var(--clr-dark);
-    border-radius:5px;
+    border-radius: 5px;
     padding: 10px 30px;
     background-color: var(--bg-color);
     cursor: pointer;
 }
+
+.range-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
 .board {
-    width: min(90%,500px);
+    width: min(90%, 500px);
     height: 500px;
     margin-bottom: 20px;
     border: 1px solid var(--clr-dark);
     display: flex;
     flex-wrap: wrap;
 }
-.square{
+
+.square {
     border: 1px solid var(--clr-dark);
 }
+
 @media only screen and (max-width: 600px) {
-    main{
+    main {
         display: flex;
         flex-direction: column;
     }

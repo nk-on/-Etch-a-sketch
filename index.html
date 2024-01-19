@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="src/style.css">
     <title>Etch-a-sketch</title>
 </head>
+
 <body>
     <header>
         <h1>Etch-a-sketch</h1>
@@ -13,16 +15,20 @@
     <main>
         <section class="options-section">
             <div class="options-container">
-                <input type="color" value="#ff000" id = color-picker>
-                <button class = "option color-mode">Color Mode</button>
-                <button class = "option rainbow-mode">Rainbow mode</button>
-                <button class = "option eraser">Eraser</button>
-                <button class = "option clear">Clear</button>
-                <input type="range" min="1" max="64" id = "grid-range">
+                <input type="color" value="#ff000" id=color-picker>
+                <button class="option color-mode">Color Mode</button>
+                <button class="option rainbow-mode">Rainbow mode</button>
+                <button class="option eraser">Eraser</button>
+                <button class="option clear">Clear</button>
+            </div>
+            <div class="range-container">
+                <input type="range" min="1" max="64" id="grid-range" name="grid-range">
+                <label for="grid-range">3X3</label>
             </div>
         </section>
         <section class="board"></section>
     </main>
     <script src="src/script.js"></script>
 </body>
+
 </html>
