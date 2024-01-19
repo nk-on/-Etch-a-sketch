@@ -14,11 +14,13 @@ gridRange.addEventListener("change",()=>{
     createGrid(gridRange.value**2);
 });
 function createGrid(gridNumber){
-    console.log(gridNumber)
+    if(drawingBoard.innerHTML.length > 0){
+        drawingBoard.innerHTML = "";
+    };
     for(let i = 0; i < gridNumber;i++){
         const square = document.createElement("div");
         square.classList.add("square");
+        square.style.flex = `${100/Math.sqrt(gridNumber)}%`;
         drawingBoard.appendChild(square);
-        square.style.flex = `${Math.sqrt(gridNumber)}%`
     };
 }
