@@ -23,15 +23,15 @@ function createGrid(gridNumber) {
     };
     gridlabel.textContent = `${gridRow}X${gridRow}`;
     const childen = drawingBoard.childNodes;
-    buttons.forEach((button)=>{
-        button.addEventListener("click",()=>{
-            if(button.classList.contains("color-mode")){
+    buttons.forEach((button) => {
+        button.addEventListener("click", () => {
+            if (button.classList.contains("color-mode")) {
                 childen.forEach((square) => {
                     square.addEventListener("mousemove", displayColor);
                 });
-            }else if(button.classList.contains("rainbow-mode")){
+            } else if (button.classList.contains("rainbow-mode")) {
                 childen.forEach((square) => {
-                    square.addEventListener("mousemove",displayRainbowColor);
+                    square.addEventListener("mousemove", displayRainbowColor);
                 });
             }
         });
@@ -40,8 +40,8 @@ function createGrid(gridNumber) {
 function displayColor() {
     this.style.background = colorPicker.value;
 };
-function displayRainbowColor(){
+function displayRainbowColor() {
     const rainbowHexCodes = ['#FF0000', '#FFA500', '#FFFF00', '#008000', '#0000FF', '#4B0082', '#EE82EE'];
-    const randomIdx = Math.floor(Math.random()*rainbowHexCodes.length-1);
+    const randomIdx = Math.floor(Math.random() * rainbowHexCodes.length - 1);
     this.style.background = rainbowHexCodes[randomIdx];
-};
+}
