@@ -22,22 +22,25 @@ function createGrid(gridNumber) {
         drawingBoard.appendChild(square);
     };
     gridlabel.textContent = `${gridRow}X${gridRow}`;
-    const childen = drawingBoard.childNodes;
+    const squares = drawingBoard.childNodes;
+    displayColor(squares);
+};
+function displayColor(squares){
     buttons.forEach((button) => {
         button.addEventListener("click", () => {
             if (button.classList.contains("color-mode")) {
-                childen.forEach((square) => {
-                    square.addEventListener("mousemove", displayColor);
+                squares.forEach((square) => {
+                    square.addEventListener("mousemove", displaySelectedColor);
                 });
             } else if (button.classList.contains("rainbow-mode")) {
-                childen.forEach((square) => {
+                squares.forEach((square) => {
                     square.addEventListener("mousemove", displayRainbowColor);
                 });
             }
         });
     });
-};
-function displayColor() {
+}
+function displaySelectedColor() {
     this.style.background = colorPicker.value;
 };
 function displayRainbowColor() {
