@@ -39,23 +39,28 @@ function createGrid(gridNumber) {
 function displayColor(squares) {
     buttons.forEach((button) => {
         button.addEventListener("click", () => {
-            if (button.classList.contains("color-mode")) {
-                squares.forEach((square) => {
-                    square.addEventListener("mousemove", displaySelectedColor);
-                });
-            } else if (button.classList.contains("rainbow-mode")) {
-                squares.forEach((square) => {
-                    square.addEventListener("mousemove", displayRainbowColor);
-                });
-            } else if (button.classList.contains("eraser")) {
-                squares.forEach((square) => {
-                    square.addEventListener("mousemove", eraseColor);
-                });
-            } else {
-                squares.forEach((square) => {
-                    clearBoard(square);
-                });
-            }
+            switch(true){
+                case button.classList.contains("color-mode"):
+                    squares.forEach((square) => {
+                        square.addEventListener("mousemove", displaySelectedColor);
+                    });
+                    break;
+                case button.classList.contains("rainbow-mode"):
+                    squares.forEach((square) => {
+                        square.addEventListener("mousemove", displayRainbowColor);
+                    });
+                    break;
+                case button.classList.contains("eraser"):
+                    squares.forEach((square) => {
+                        square.addEventListener("mousemove", eraseColor);
+                    });
+                    break;
+                default:
+                    squares.forEach((square) => {
+                        clearBoard(square);
+                    });
+                    break;
+            };
         });
     });
 }
