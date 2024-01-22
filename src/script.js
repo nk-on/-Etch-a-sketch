@@ -40,6 +40,10 @@ function displayColor(squares) {
                 squares.forEach((square) => {
                     square.addEventListener("mousemove", eraseColor);
                 });
+            }else{
+                squares.forEach((square) => {
+                    clearBoard(square);
+                });
             }
         });
     });
@@ -54,4 +58,7 @@ function displayRainbowColor() {
 };
 function eraseColor() {
     this.style.background = "#fff";
-}
+};
+function clearBoard(square){
+    square.style.background = "#fff";
+};
