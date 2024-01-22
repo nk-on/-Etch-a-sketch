@@ -19,7 +19,7 @@ function createDefaultGrid() {
     };
     gridlabel.textContent = `${4}X${4}`;
     const squares = drawingBoard.childNodes;
-    displayColor(squares);
+    manageColor(squares)
 };
 function createGrid(gridNumber) {
     const gridRow = Math.sqrt(gridNumber);
@@ -34,9 +34,12 @@ function createGrid(gridNumber) {
     };
     gridlabel.textContent = `${gridRow}X${gridRow}`;
     const squares = drawingBoard.childNodes;
-    displayColor(squares);
+    manageColor(squares);
 };
 function manageColor(squares) {
+    squares.forEach((square) => {
+        square.addEventListener("mousemove", displaySelectedColor);
+    });
     buttons.forEach((button) => {
         button.addEventListener("click", () => {
             switch(true){
