@@ -10,6 +10,17 @@ const buttons = document.querySelectorAll("button")
 gridRange.addEventListener("change", () => {
     createGrid(gridRange.value ** 2);
 });
+function createDefaultGrid() {
+    for (let i = 0; i < 16; i++) {
+        const square = document.createElement("div");
+        square.classList.add("square");
+        square.style.flex = `${100 / 4}%`;
+        drawingBoard.appendChild(square);
+    };
+    gridlabel.textContent = `${4}X${4}`;
+    const squares = drawingBoard.childNodes;
+    displayColor(squares);
+};
 function createGrid(gridNumber) {
     const gridRow = Math.sqrt(gridNumber);
     if (drawingBoard.innerHTML.length > 0) {
@@ -40,7 +51,7 @@ function displayColor(squares) {
                 squares.forEach((square) => {
                     square.addEventListener("mousemove", eraseColor);
                 });
-            }else{
+            } else {
                 squares.forEach((square) => {
                     clearBoard(square);
                 });
@@ -59,6 +70,7 @@ function displayRainbowColor() {
 function eraseColor() {
     this.style.background = "#fff";
 };
-function clearBoard(square){
+function clearBoard(square) {
     square.style.background = "#fff";
 };
+createDefaultGrid();
