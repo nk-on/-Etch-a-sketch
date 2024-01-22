@@ -36,7 +36,7 @@ function createGrid(gridNumber) {
     const squares = drawingBoard.childNodes;
     displayColor(squares);
 };
-function displayColor(squares) {
+function manageColor(squares) {
     buttons.forEach((button) => {
         button.addEventListener("click", () => {
             switch(true){
