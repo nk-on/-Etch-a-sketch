@@ -25,7 +25,7 @@ function createGrid(gridNumber) {
     const squares = drawingBoard.childNodes;
     displayColor(squares);
 };
-function displayColor(squares){
+function displayColor(squares) {
     buttons.forEach((button) => {
         button.addEventListener("click", () => {
             if (button.classList.contains("color-mode")) {
@@ -35,6 +35,10 @@ function displayColor(squares){
             } else if (button.classList.contains("rainbow-mode")) {
                 squares.forEach((square) => {
                     square.addEventListener("mousemove", displayRainbowColor);
+                });
+            } else if (button.classList.contains("eraser")) {
+                squares.forEach((square) => {
+                    square.addEventListener("mousemove", eraseColor);
                 });
             }
         });
@@ -47,4 +51,7 @@ function displayRainbowColor() {
     const rainbowHexCodes = ['#FF0000', '#FFA500', '#FFFF00', '#008000', '#0000FF', '#4B0082', '#EE82EE'];
     const randomIdx = Math.floor(Math.random() * rainbowHexCodes.length - 1);
     this.style.background = rainbowHexCodes[randomIdx];
+};
+function eraseColor() {
+    this.style.background = "#fff";
 }
