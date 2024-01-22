@@ -43,7 +43,10 @@ main {
     background-color: var(--bg-color);
     cursor: pointer;
 }
-
+.option:hover{
+    background-color: var(--clr-onclick);
+    color:var(--bg-color);
+}
 .range-container {
     display: flex;
     flex-direction: column;
