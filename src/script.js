@@ -7,9 +7,6 @@ const eraserButton = document.querySelector('.eraser');
 const clearButton = document.querySelector('.clear');
 const drawingBoard = document.querySelector(".board");
 const buttons = document.querySelectorAll("button")
-gridRange.addEventListener("change", () => {
-    createGrid(gridRange.value ** 2);
-});
 function createGrid(gridNumber) {
     const gridRow = Math.sqrt(gridNumber);
     if (drawingBoard.innerHTML.length > 0) {
@@ -69,6 +66,9 @@ function eraseColor() {
 function clearBoard(square) {
     square.style.background = "#fff";
 };
+gridRange.addEventListener("change", () => {
+    createGrid(gridRange.value ** 2);
+});
 buttons.forEach((button) => {
     button.addEventListener("click", manageColor)
 });
