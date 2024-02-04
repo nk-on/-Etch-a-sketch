@@ -19,13 +19,13 @@ function createGrid(gridNumber) {
         drawingBoard.appendChild(square);
     };
     gridlabel.textContent = `${gridRow}X${gridRow}`;
+    const squares = document.querySelectorAll(".square");
+    squares.forEach((square)=>{
+        square.addEventListener("mousemove",displaySelectedColor);
+    });
 };
 function manageColor() {
     const squares = document.querySelectorAll(".square");
-    squares.forEach((square)=>{
-        console.log("i work")
-        square.addEventListener("mousemove",displaySelectedColor);
-    });
     switch (true) {
         case this.classList.contains("clear"):
             squares.forEach((square) => {
@@ -73,4 +73,3 @@ buttons.forEach((button) => {
     button.addEventListener("click", manageColor)
 });
 createGrid(16);
-manageColor();
