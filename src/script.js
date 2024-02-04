@@ -27,7 +27,6 @@ function manageColor() {
     const squares = document.querySelectorAll(".square");
     squares.forEach((square)=>{
         console.log("i work")
-        // square.removeEventListener("mousemove", displaySelectedColor);
         square.addEventListener("mousemove",displaySelectedColor);
     });
     switch (true) {
