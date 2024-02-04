@@ -61,7 +61,7 @@ function displayRainbowColor() {
     this.style.background = rainbowHexCodes[randomIdx];
 };
 function eraseColor() {
-    this.style.background = "#fff";
+    this.style.background = "#ededed";
 };
 function clearBoard(square) {
     square.style.background = "#fff";
@@ -70,6 +70,6 @@ gridRange.addEventListener("change", () => {
     createGrid(gridRange.value ** 2);
 });
 buttons.forEach((button) => {
-    button.addEventListener("click", manageColor)
+    button.addEventListener("click", manageColor);
 });
 createGrid(16);
