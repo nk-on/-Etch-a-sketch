@@ -38,7 +38,6 @@ function manageMode() {
             });
             break;
         case "rainbow-mode":
-            console.log("i am rainbowmode")
             squares.forEach((square) => {
                 square.removeEventListener("mousemove", displayRainbowColor);
                 square.addEventListener("mousemove", displayRainbowColor);
