@@ -9,9 +9,11 @@ const drawingBoard = document.querySelector(".board");
 const buttons = document.querySelectorAll("button")
 function createGrid(gridNumber) {
     const gridRow = Math.sqrt(gridNumber);
+    //cleaning up exsisting grid in order to draw new 
     if (drawingBoard.innerHTML.length > 0) {
         drawingBoard.innerHTML = "";
     };
+    //creating grid based on gridNumber
     for (let i = 0; i < gridNumber; i++) {
         const square = document.createElement("div");
         square.classList.add("square");
@@ -20,11 +22,13 @@ function createGrid(gridNumber) {
     };
     gridlabel.textContent = `${gridRow}X${gridRow}`;
     const squares = document.querySelectorAll(".square");
+    //adding default color mode to the squares
     squares.forEach((square)=>{
         square.addEventListener("mousemove",displaySelectedColor);
     });
 };
-function manageColor() {
+//function responsible for changing drawing mode
+function manageMode() {
     const squares = document.querySelectorAll(".square");
     switch (true) {
         case this.classList.contains("clear"):
@@ -66,10 +70,11 @@ function eraseColor() {
 function clearBoard(square) {
     square.style.background = "#fff";
 };
+//creating grid based on range value
 gridRange.addEventListener("change", () => {
     createGrid(gridRange.value ** 2);
 });
 buttons.forEach((button) => {
-    button.addEventListener("click", manageColor);
+    button.addEventListener("click", manageMode);
 });
 createGrid(16);
