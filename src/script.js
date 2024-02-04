@@ -22,39 +22,39 @@ function createGrid(gridNumber) {
         drawingBoard.appendChild(square);
     };
     gridlabel.textContent = `${gridRow}X${gridRow}`;
-    const squares = drawingBoard.childNodes;
-    manageColor(squares);
 };
-function manageColor(squares) {
-    squares.forEach((square) => {
-        square.addEventListener("mousemove", displaySelectedColor);
+function manageColor() {
+    const squares = document.querySelectorAll(".square");
+    squares.forEach((square)=>{
+        console.log("i work")
+        // square.removeEventListener("mousemove", displaySelectedColor);
+        square.addEventListener("mousemove",displaySelectedColor);
     });
-    buttons.forEach((button) => {
-        button.addEventListener("click", () => {
-            switch(true){
-                case button.classList.contains("color-mode"):
-                    squares.forEach((square) => {
-                        square.addEventListener("mousemove", displaySelectedColor);
-                    });
-                    break;
-                case button.classList.contains("rainbow-mode"):
-                    squares.forEach((square) => {
-                        square.addEventListener("mousemove", displayRainbowColor);
-                    });
-                    break;
-                case button.classList.contains("eraser"):
-                    squares.forEach((square) => {
-                        square.addEventListener("mousemove", eraseColor);
-                    });
-                    break;
-                default:
-                    squares.forEach((square) => {
-                        clearBoard(square);
-                    });
-                    break;
-            };
-        });
-    });
+    switch (true) {
+        case this.classList.contains("clear"):
+            squares.forEach((square) => {
+                clearBoard(square);
+            });
+            break;
+        case this.classList.contains("rainbow-mode"):
+            squares.forEach((square) => {
+                square.removeEventListener("mousemove", displayRainbowColor);
+                square.addEventListener("mousemove", displayRainbowColor);
+            });
+            break;
+        case this.classList.contains("eraser"):
+            squares.forEach((square) => {
+                square.removeEventListener("mousemove", eraseColor);
+                square.addEventListener("mousemove", eraseColor);
+            });
+            break;
+        default:
+            squares.forEach((square)=>{
+                square.removeEventListener("mousemove", displaySelectedColor);
+                square.addEventListener("mousemove",displaySelectedColor);
+            });
+            break;
+    };
 };
 function displaySelectedColor() {
     this.style.background = colorPicker.value;
@@ -70,4 +70,8 @@ function eraseColor() {
 function clearBoard(square) {
     square.style.background = "#fff";
 };
+buttons.forEach((button) => {
+    button.addEventListener("click", manageColor)
+});
 createGrid(16);
+manageColor();
