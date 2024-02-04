@@ -23,35 +23,37 @@ function createGrid(gridNumber) {
     gridlabel.textContent = `${gridRow}X${gridRow}`;
     const squares = document.querySelectorAll(".square");
     //adding default color mode to the squares
-    squares.forEach((square)=>{
-        square.addEventListener("mousemove",displaySelectedColor);
+    squares.forEach((square) => {
+        square.addEventListener("mousemove", displaySelectedColor);
     });
 };
 //function responsible for changing drawing mode
 function manageMode() {
     const squares = document.querySelectorAll(".square");
-    switch (true) {
-        case this.classList.contains("clear"):
+    const mode = this.dataset.mode;
+    switch (mode) {
+        case "clear":
             squares.forEach((square) => {
                 clearBoard(square);
             });
             break;
-        case this.classList.contains("rainbow-mode"):
+        case "rainbow-mode":
+            console.log("i am rainbowmode")
             squares.forEach((square) => {
                 square.removeEventListener("mousemove", displayRainbowColor);
                 square.addEventListener("mousemove", displayRainbowColor);
             });
             break;
-        case this.classList.contains("eraser"):
+        case "eraser":
             squares.forEach((square) => {
                 square.removeEventListener("mousemove", eraseColor);
                 square.addEventListener("mousemove", eraseColor);
             });
             break;
         default:
-            squares.forEach((square)=>{
+            squares.forEach((square) => {
                 square.removeEventListener("mousemove", displaySelectedColor);
-                square.addEventListener("mousemove",displaySelectedColor);
+                square.addEventListener("mousemove", displaySelectedColor);
             });
             break;
     };

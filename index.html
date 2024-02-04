@@ -16,14 +16,14 @@
         <section class="options-section">
             <div class="options-container">
                 <input type="color" value="#ff000" id=color-picker>
-                <button class="option color-mode">Color Mode</button>
-                <button class="option rainbow-mode">Rainbow mode</button>
-                <button class="option eraser">Eraser</button>
-                <button class="option clear">Clear</button>
+                <button class="option color-mode" data-mode="color-mode">Color Mode</button>
+                <button class="option rainbow-mode" data-mode="rainbow-mode">Rainbow mode</button>
+                <button class="option eraser" data-mode="eraser">Eraser</button>
+                <button class="option clear" data-mode="clear">Clear</button>
             </div>
             <div class="range-container">
                 <input type="range" min="1" max="64" id="grid-range" name="grid-range">
-                <label for="grid-range" id = "grid-label"></label>
+                <label for="grid-range" id="grid-label"></label>
             </div>
         </section>
         <section class="board"></section>
