@@ -1,10 +1,10 @@
 const gridRange = document.querySelector("#grid-range");
 const gridlabel = document.querySelector("#grid-label")
 const colorPicker = document.querySelector("#color-picker");
-const colorModeButton = document.querySelector('.color-mode');
-const rainbowModeButton = document.querySelector('.rainbow-mode');
-const eraserButton = document.querySelector('.eraser');
-const clearButton = document.querySelector('.clear');
+const colorModeButton = document.querySelector('[color-mode]');
+const rainbowModeButton = document.querySelector('[rainbow-mode]');
+const eraserButton = document.querySelector('[eraser]');
+const clearButton = document.querySelector('[clear]');
 const drawingBoard = document.querySelector(".board");
 const buttons = document.querySelectorAll("button")
 function createGrid(gridNumber) {
